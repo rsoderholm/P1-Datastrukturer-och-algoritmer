@@ -3,7 +3,19 @@
  */
 public class ListNode {
 
+    private ListNode next;
+    private Object data;
+
+
+
     public ListNode(Object DataValue, ListNode nextNode) {
+        data = DataValue;
+        next = nextNode;
+
+    }
+
+    public Object getData() {
+        return data;
 
     }
 
