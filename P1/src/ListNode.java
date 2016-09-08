@@ -7,11 +7,14 @@ public class ListNode {
     private Object data;
 
 
-
     public ListNode(Object DataValue, ListNode nextNode) {
         data = DataValue;
         next = nextNode;
 
+    }
+
+    public void setData(Object data) {
+        this.data = data;
     }
 
     public Object getData() {
@@ -19,4 +22,13 @@ public class ListNode {
 
     }
 
+    public void setNext(ListNode next) {
+        this.next = next;
+    }
+
+    public ListNode getNext() {
+        return next;
+    }
 }
+
+
