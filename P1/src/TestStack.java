@@ -31,7 +31,8 @@ public class TestStack {
 		assertTest(myStack.pop() == null, "Pop is not correct");
 		
 		System.out.println("All code is working");
-		myStack.enterString();
+//		myStack.enterString();
+		myStack.stringToStack();
 	}
 
    private static void printStack(String why) {

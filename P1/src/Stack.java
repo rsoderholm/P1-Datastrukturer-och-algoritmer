@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Scanner;
 
 /**
@@ -47,17 +48,38 @@ public class Stack implements StackerFace {
         this.size = size;
     }
 
-    public void enterString() {
-        String inString;
-        Scanner in = new Scanner(System.in);
-        System.out.println("Please enter a String");
-        inString = in.nextLine();
-        System.out.println("You entered: " + inString );
+    public void stringToStack() {
+        char currentChar;
+        int index = 0;
+        char node;
+
+        String inString = JOptionPane.showInputDialog(null, "Please enter a string");
+
+        for (int i = 0; i < inString.length(); i++) {
+            currentChar = inString.charAt(i);
+            if (currentChar == '{' || currentChar == '(' || currentChar == '[') {
+                push(currentChar);
+            }
+
+            if (currentChar == '}' || currentChar == ')' || currentChar == ']') {
+
+                }
+
+
+            }
+
+
+        }
 
 
 
 
 
+
+
+    public String parseString() {
+
+        return null;
     }
 
 
