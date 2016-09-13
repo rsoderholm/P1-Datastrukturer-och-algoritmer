@@ -5,7 +5,7 @@ import java.util.Scanner;
  * Created by Robin on 2016-09-07.
  */
 public class Stack implements Stackable {
-    int count;
+
     private ListNode firstNode;
     private int size = 0;
 
@@ -60,8 +60,6 @@ public class Stack implements Stackable {
 
         char currentChar;
         Stack stack = new Stack();
-        int brackets = 6;
-        char para = 0;
         String inString;
 
 
@@ -93,16 +91,15 @@ public class Stack implements Stackable {
             } else if (currentChar == '}') {
                 if (stack.isEmpty())
 
-                if (!stack.pop().equals('{'))
-                    System.out.println("Braces do no match");
-
+                    if (!stack.pop().equals('{'))
+                        System.out.println("Braces do no match");
 
 
             } else if (currentChar == ']') {
                 if (stack.isEmpty())
 
-                if (!stack.pop().equals('['))
-                    System.out.println("Brackets do not match");
+                    if (!stack.pop().equals('['))
+                        System.out.println("Brackets do not match");
 
 
             }

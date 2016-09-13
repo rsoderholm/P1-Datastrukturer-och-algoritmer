@@ -8,8 +8,6 @@ public class testCharacter {
 
         char currentChar;
         Stack stack = new Stack();
-        int brackets = 6;
-        char para = 0;
 
 
         for (int i = 0; i < inString.length(); i++) {
