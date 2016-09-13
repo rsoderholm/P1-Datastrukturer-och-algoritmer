@@ -4,7 +4,7 @@ import java.util.Scanner;
 /**
  * Created by Robin on 2016-09-07.
  */
-public class Stack implements StackerFace {
+public class Stack implements Stackable {
     int count;
     private ListNode firstNode;
     private int size = 0;
@@ -44,45 +44,95 @@ public class Stack implements StackerFace {
         return size;
     }
 
+    public boolean isEmpty() {
+        if (size() == 0) {
+            return true;
+        }
+        return false;
+    }
+
     public void setSize() {
         this.size = size;
     }
 
+
     public void stringToStack() {
+
         char currentChar;
-        int index = 0;
-        char node;
+        Stack stack = new Stack();
+        int brackets = 6;
+        char para = 0;
+        String inString;
 
-        String inString = JOptionPane.showInputDialog(null, "Please enter a string");
 
+        inString = JOptionPane.showInputDialog(null, "Please enter a string");
+
+        System.out.print("String to be parsed: " + inString);
         for (int i = 0; i < inString.length(); i++) {
             currentChar = inString.charAt(i);
-            if (currentChar == '{' || currentChar == '(' || currentChar == '[') {
-                push(currentChar);
-            }
 
-            if (currentChar == '}' || currentChar == ')' || currentChar == ']') {
+
+            if (currentChar == '(') {
+                stack.push(currentChar);
+
+            } else if (currentChar == '[') {
+                stack.push(currentChar);
+
+            } else if (currentChar == '{') {
+                stack.push(currentChar);
+
+
+            } else if (currentChar == ')') {
+                stack.pop();
+                if (!stack.pop().equals('(')) {
+                    System.out.println("Parentheses do not match");
 
                 }
 
 
+            } else if (currentChar == '}') {
+                if (stack.isEmpty())
+
+                if (!stack.pop().equals('{'))
+                    System.out.println("Braces do no match");
+
+
+
+            } else if (currentChar == ']') {
+                if (stack.isEmpty())
+
+                if (!stack.pop().equals('['))
+                    System.out.println("Brackets do not match");
+
+
             }
-
-
         }
 
 
-
-
-
-
-
-    public String parseString() {
-
-        return null;
     }
 
 
 }
+
+
+//            else if (currentChar == '{' || currentChar == '(' || currentChar == '[') {
+//                stack.push(currentChar);
+//            } else if (currentChar == '}' || currentChar == ')' || currentChar == ']') {
+//                stack.pop();
+
+
+//    }
+//            }
+
+
+
+
+
+
+
+
+
+
+
 
 

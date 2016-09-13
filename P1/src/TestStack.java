@@ -5,8 +5,10 @@ public class TestStack {
 		int myObject1 = 1;
 		String myObject2 = "myObject2";
 		String myObject3 = "myObject3";
+		String inString;
 		
 		Stack myStack = new Stack();
+		testCharacter checkchar = new testCharacter();
 		assertTest(myStack.size() == 0, "Not correct number of Nodes");
 		assertTest(myStack.peek() == null, "Peek is not correct");
 		myStack.push(myObject1);
