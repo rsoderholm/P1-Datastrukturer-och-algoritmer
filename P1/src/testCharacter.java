@@ -6,12 +6,14 @@ import javax.swing.*;
 public class testCharacter {
     public boolean stringToStack(String inString) {
 
+
         char currentChar;
         Stack stack = new Stack();
 
 
         for (int i = 0; i < inString.length(); i++) {
             currentChar = inString.charAt(i);
+
 
             switch (currentChar) {
                 case '}':
@@ -44,6 +46,9 @@ public class testCharacter {
         return stack.isEmpty();
     }
 
+    /**
+     * @param inString
+     */
     public void printResult(String inString) {
         testCharacter tc = new testCharacter();
         if (tc.stringToStack(inString) == false) {
@@ -52,6 +57,7 @@ public class testCharacter {
         } else {
             System.out.println("Everything matches in: " + inString);
             System.out.println("Finished parsing!");
+
         }
 
     }
