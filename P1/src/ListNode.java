@@ -1,4 +1,5 @@
 /**
+ * The ListNode class is a representation of the nodes in our stack.
  * Created by Robin on 2016-09-07.
  */
 public class ListNode {
@@ -7,28 +8,36 @@ public class ListNode {
     private Object data;
 
 
+    /**
+     * Initializes a new instance of the ListNode class.
+     *
+     * @param DataValue > The data
+     * @param nextNode  > The node
+     */
     public ListNode(Object DataValue, ListNode nextNode) {
         data = DataValue;
         next = nextNode;
 
     }
 
-    public void setData(Object data) {
-        this.data = data;
-    }
 
+    /**
+     * Returns the data currently in the node.
+     *
+     * @return
+     */
     public Object getData() {
         return data;
 
     }
 
-    public void setNext(ListNode next) {
-        this.next = next;
-    }
-
+    /**
+     * Returns the next node in stack.
+     * @return
+     */
     public ListNode getNext() {
         return next;
     }
+
+
 }
-
-

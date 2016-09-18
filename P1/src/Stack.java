@@ -2,14 +2,19 @@ import javax.swing.*;
 import java.util.Scanner;
 
 /**
+ * The stack I implemented for this assignment.
  * Created by Robin on 2016-09-07.
  */
-public class Stack implements Stackable {
+public class Stack {
 
     private ListNode firstNode;
     private int size = 0;
 
-
+    /**
+     * Pushes object to stack. New Object goes to the top of the stack.
+     *
+     * @param dataIn
+     */
     public void push(Object dataIn) {
         firstNode = new ListNode(dataIn, firstNode);
         size++;
@@ -17,19 +22,28 @@ public class Stack implements Stackable {
     }
 
 
+    /**
+     * Removes the object you last put in from the stack.
+     *
+     * @return
+     */
     public Object pop() {
 
-        if (size == 0) {
+        if (size > 0) {
+            ListNode node = firstNode;
+            firstNode = firstNode.getNext();
+            size--;
+            return node.getData();
+        } else
             return null;
-        }
-        Object data = firstNode.getData();
-        ListNode node = firstNode.getNext();
-        firstNode = node;
-        size--;
-        return data;
     }
 
 
+    /**
+     * Let's you look at the last object put in without removing it from the stack.
+     *
+     * @return
+     */
     public Object peek() {
         if (firstNode == null) {
             return null;
@@ -40,10 +54,24 @@ public class Stack implements Stackable {
 
     }
 
+    /**
+     * Returns the size of the stack.
+     *
+     * @return
+     */
     public int size() {
         return size;
     }
 
+    public void emptyStack() {
+        size = 0;
+    }
+
+    /**
+     * Returns true if the stack is empty. False if it contains data.
+     *
+     * @return
+     */
     public boolean isEmpty() {
         if (size() == 0) {
             return true;
@@ -51,75 +79,9 @@ public class Stack implements Stackable {
         return false;
     }
 
-    public void setSize() {
-        this.size = size;
-    }
-
-
-    public void stringToStack() {
-
-        char currentChar;
-        Stack stack = new Stack();
-        String inString;
-
-
-        inString = JOptionPane.showInputDialog(null, "Please enter a string");
-
-        System.out.print("String to be parsed: " + inString);
-        for (int i = 0; i < inString.length(); i++) {
-            currentChar = inString.charAt(i);
-
-
-            if (currentChar == '(') {
-                stack.push(currentChar);
-
-            } else if (currentChar == '[') {
-                stack.push(currentChar);
-
-            } else if (currentChar == '{') {
-                stack.push(currentChar);
-
-
-            } else if (currentChar == ')') {
-                stack.pop();
-                if (!stack.pop().equals('(')) {
-                    System.out.println("Parentheses do not match");
-
-                }
-
-
-            } else if (currentChar == '}') {
-                if (stack.isEmpty())
-
-                    if (!stack.pop().equals('{'))
-                        System.out.println("Braces do no match");
-
-
-            } else if (currentChar == ']') {
-                if (stack.isEmpty())
-
-                    if (!stack.pop().equals('['))
-                        System.out.println("Brackets do not match");
-
-
-            }
-        }
-
-
-    }
-
 
 }
 
-
-//            else if (currentChar == '{' || currentChar == '(' || currentChar == '[') {
-//                stack.push(currentChar);
-//            } else if (currentChar == '}' || currentChar == ')' || currentChar == ']') {
-//                stack.pop();
-
-
-//    }
-//            }
 
 
 
